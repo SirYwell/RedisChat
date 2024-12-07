@@ -93,19 +93,15 @@ shadowJar {
     relocate 'com.github.Anon8281.universalScheduler', 'dev.unnm3d.redischat.libraries.universalScheduler'
 }
 
-def sourceJavaVersion = 17
-def releaseJavaVersion = 17
-
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(releaseJavaVersion)
-        sourceCompatibility = JavaLanguageVersion.of(sourceJavaVersion)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 
     withSourcesJar()
     withJavadocJar()
 }
-compileJava.options.release.set releaseJavaVersion
+compileJava.options.release.set 21
 compileJava.options.encoding 'UTF-8'
 
 javadoc {
